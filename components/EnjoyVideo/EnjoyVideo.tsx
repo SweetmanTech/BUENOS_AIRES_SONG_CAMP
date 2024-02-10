@@ -18,29 +18,28 @@ const EnjoyVideo: FC<EnjoyVideoProps> = ({
   isTappedDrop,
   thumbnail,
 }) => {
-  const videoRef: any = useRef()
+  const videoRef = useRef<HTMLVideoElement>(null)
   const isPlaying = useEnjoyVideo({ autoPlayable, isActive, isTappedDrop, videoRef })
-  console.log("SWEETS thumbnail", thumbnail)
+  const isGonzalo = src === "/videos/0xgonzalo.mp4"
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-full overflow-hidden">
       <video
         width="100%"
-        height="auto"
+        height="100%"
         src={src}
         ref={videoRef}
         poster={thumbnail}
-        className="object-cover"
+        className="object-cover w-full h-full"
+        style={{ objectPosition: isGonzalo ? `center 40%` : `center 33%` }} // Adjust this value to change the crop focus
+        playsInline // Good practice for autoplaying videos without user interaction
       >
         Your browser does not support the video element.
       </video>
-      <div
-        className="absolute left-0 top-0
-      w-full h-full
-      flex items-center justify-center"
-      >
+      <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
         {!isPlaying && <Icon name="play" raw color="#FFFFFF" size={40} />}
       </div>
     </div>
   )
 }
+
 export default EnjoyVideo

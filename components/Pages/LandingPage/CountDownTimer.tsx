@@ -26,7 +26,9 @@ const CountDownTimer = ({ className = "" }) => {
   }, [])
 
   return (
-    <FadeInWhenVisible className={`bg-white p-[10px] xl:p-[20px] rounded-[10px] ${className}`}>
+    <FadeInWhenVisible
+      className={`bg-white bg-opacity-75 p-[10px] xl:p-[20px] rounded-[10px] ${className}`}
+    >
       <div className="grid grid-cols-4 gap-x-[10px] samsungS8:gap-x-[12px] xl:gap-x-[30px]">
         <DigitViewer label="DAYS" digit={days} />
         <DigitViewer label="HOURS" digit={hours} />
