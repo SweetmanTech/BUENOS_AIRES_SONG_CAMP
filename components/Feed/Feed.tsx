@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion"
-import "swiper/css/bundle" // import Swiper styles
+import "swiper/css/bundle"
 import FeedSwiper from "./FeedSwiper"
 
 const Feed = ({ className }: any) => (
