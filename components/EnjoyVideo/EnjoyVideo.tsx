@@ -9,6 +9,7 @@ interface EnjoyVideoProps {
   isActive?: boolean
   isTappedDrop?: boolean
   thumbnail?: string
+  smokeScreen?: boolean
 }
 
 const EnjoyVideo: FC<EnjoyVideoProps> = ({
@@ -17,10 +18,12 @@ const EnjoyVideo: FC<EnjoyVideoProps> = ({
   isActive,
   isTappedDrop,
   thumbnail,
+  smokeScreen = false,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const isPlaying = useEnjoyVideo({ autoPlayable, isActive, isTappedDrop, videoRef })
   const isGonzalo = src === "/videos/0xgonzalo.mp4"
+
   return (
     <div className="relative w-full h-full overflow-hidden">
       <video
@@ -35,7 +38,12 @@ const EnjoyVideo: FC<EnjoyVideoProps> = ({
       >
         Your browser does not support the video element.
       </video>
-      <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
+
+      {smokeScreen && (
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25" />
+      )}
+
+      <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center z-10">
         {!isPlaying && <Icon name="play" raw color="#FFFFFF" size={40} />}
       </div>
     </div>

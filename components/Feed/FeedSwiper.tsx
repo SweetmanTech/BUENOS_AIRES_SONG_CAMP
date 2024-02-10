@@ -46,6 +46,7 @@ const FeedSwiper = () => {
           <SwiperSlide key={i} className="overflow-hidden">
             <EnjoyVideo
               src={drop.content.uri}
+              smokeScreen={i > 0}
               autoPlayable
               isActive={drop === activeDrop}
               isTappedDrop={!isPlaying}
