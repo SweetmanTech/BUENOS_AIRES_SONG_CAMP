@@ -1,3 +1,5 @@
+/* eslint-disable react/default-props-match-prop-types */
+/* eslint-disable no-nested-ternary */
 import { Icons } from "./resolver"
 
 export type IconsType = keyof typeof Icons
