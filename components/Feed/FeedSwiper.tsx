@@ -4,8 +4,6 @@ import { motion } from "framer-motion"
 import "swiper/css/bundle"
 import { useFeedProvider } from "@/providers/FeedProvider"
 import EnjoyVideo from "../EnjoyVideo"
-import getIpfsLink from "@/lib/getIpfsLink"
-import { useState } from "react"
 
 const FeedSwiper = () => {
   const { activeDrop, isPlaying, feed, extendFeed, setActiveFeed, setActiveDrop } =
@@ -44,15 +42,14 @@ const FeedSwiper = () => {
         }}
       >
         {feed.map((drop, i) => {
-          console.log("SWEETS DROP", drop)
+          console.log("SWEETS DROP", drop === activeDrop)
           return (
             // eslint-disable-next-line react/no-array-index-key
             <SwiperSlide key={i} className="overflow-hidden">
-              <div>HELLO WORLD</div>
               <EnjoyVideo
                 src={drop.content.uri}
                 autoPlayable
-                isActive
+                isActive={drop === activeDrop}
                 isTappedDrop={!isPlaying}
                 thumbnail={drop.image}
               />
