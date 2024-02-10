@@ -2,8 +2,8 @@ import { behindTheCamp } from "./behindTheCamp"
 
 const getDefaultFeed = async () => {
   const first = {
-    name: "sol siete",
-    tokenId: 2,
+    name: "only-countdown",
+    tokenId: 0,
     description: "",
     image: "",
     animation_url: "",
@@ -12,16 +12,8 @@ const getDefaultFeed = async () => {
       uri: "",
     },
   }
-
-  // Create a copy of the behindTheCamp array and shuffle it
-  const shuffledBehindTheCamp = [...behindTheCamp].sort(() => 0.5 - Math.random()) // Shuffle the copied elements
-
-  // Unshift the first item to the shuffled copy
+  const shuffledBehindTheCamp = [...behindTheCamp].sort(() => 0.5 - Math.random())
   shuffledBehindTheCamp.unshift(first)
-
-  console.log("SWEETS behindTheCamp", behindTheCamp)
-  console.log("SWEETS SHUFFLED", shuffledBehindTheCamp)
-
   return shuffledBehindTheCamp
 }
 

@@ -41,21 +41,18 @@ const FeedSwiper = () => {
           onlyInViewport: false,
         }}
       >
-        {feed.map((drop, i) => {
-          console.log("SWEETS DROP", drop === activeDrop)
-          return (
-            // eslint-disable-next-line react/no-array-index-key
-            <SwiperSlide key={i} className="overflow-hidden">
-              <EnjoyVideo
-                src={drop.content.uri}
-                autoPlayable
-                isActive={drop === activeDrop}
-                isTappedDrop={!isPlaying}
-                thumbnail={drop.image}
-              />
-            </SwiperSlide>
-          )
-        })}
+        {feed.map((drop, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <SwiperSlide key={i} className="overflow-hidden">
+            <EnjoyVideo
+              src={drop.content.uri}
+              autoPlayable
+              isActive={drop === activeDrop}
+              isTappedDrop={!isPlaying}
+              thumbnail={drop.image}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </motion.div>
   )
