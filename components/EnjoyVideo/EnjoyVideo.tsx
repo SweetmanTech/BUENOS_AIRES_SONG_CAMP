@@ -30,8 +30,8 @@ const EnjoyVideo: FC<EnjoyVideoProps> = ({
         ref={videoRef}
         poster={thumbnail}
         className="object-cover w-full h-full"
-        style={{ objectPosition: isGonzalo ? `center 40%` : `center 33%` }} // Adjust this value to change the crop focus
-        playsInline // Good practice for autoplaying videos without user interaction
+        style={{ objectPosition: isGonzalo ? `center 40%` : `center 33%` }}
+        playsInline
       >
         Your browser does not support the video element.
       </video>
