@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Keyboard } from "swiper/modules"
+import { Keyboard, Mousewheel } from "swiper/modules"
 import { motion } from "framer-motion"
 import "swiper/css/bundle"
 import { useFeedProvider } from "@/providers/FeedProvider"
@@ -31,7 +31,7 @@ const FeedSwiper = () => {
         direction="vertical"
         slidesPerView={1}
         spaceBetween={0}
-        modules={[Keyboard]}
+        modules={[Keyboard, Mousewheel]}
         mousewheel
         pagination={false}
         className="h-screen flex items-center"
