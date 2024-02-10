@@ -1,3 +1,3 @@
-import EnjoyFeed from "./EnjoyFeed"
+import Feed from "./Feed"
 
-export default EnjoyFeed
+export default Feed
